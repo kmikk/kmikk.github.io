@@ -1,57 +1,161 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>About Kate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Latitude vs. Weather</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<img src="images/EBP_2017_0068.jpg" alt="wedding photo" width="200">
-<h1>About Kate Hoffman Mikkelson</h1>
-<p>Hello! Kate has lived in or near the Twin Cities her whole life. 
-    Passionately devoted to promoting the Midwest as being more than just "flyover country," she currently volunteers 
-    with the US Bartenders Guild planning networking, educational, and fundraising events.</p>
-<p>When she's not bossing around bartenders, working her dayjob, or in Data Bootcamp, she can be found on her patio with 
-    her cat, husband, and two step-kids. She's probably planning a trip someplace.</p>
-    <ul>
-            <li><a href="http://www.facebook.com">Facebook</a></li>
-            <li><a href="http://www.twitter.com">Twitter</a></li>
-            <li><a href="http://www.instagram.com">Instagram</a></li>
-        </ul>
+    <div id="page-container">
+        <div id="content-wrap">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Latitude vs. Weather</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="temps.html">Temperature</a>
+                            </li>
+                            <li>
+                                <a href="humidity.html">Humidity</a>
+                            </li>
+                            <li>
+                                <a href="cloudiness.html">Cloudiness</a>
+                            </li>
+                            <li>
+                                <a href="wind.html">Wind Speed</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="comparison.html">Comparison</a>
+                    </li>
+                    <li>
+                        <a href="data.html">Data</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row row-grid">
+            <div class="col-md-8">
+                <div class="box box-left">
+                    <section id="intro">
+                        <h1>Summary</h1>
+                        <hr>
+                        <figure>
+                            <a target="_blank" href="assets/images/LatTemp.png">
+                                <img id="viz-main" src="assets/images/LatTemp.png" alt="Latitude of Cities">
+                            </a>
+                        </figure>
+
+                        <section id="summary">
+                            <p> The purpose of this project was to analyze how weather changes as you get closer to the equator.
+                                To accomplish this analysis, we started by pulling data from the OpenWeatherMap API to assemble a dataset on over 500 cities.
+                            </p>
+
+                            <p>
+                                After assembling the dataset, we used Matplotlib to plot various aspects of the weather relative to latitude.
+                                Factors we looked at included <a href="temps.html">temperature</a>, <a href="cloudiness.html">cloudiness</a>, <a href="wind.html">wind speed</a>, and <a href="humidity.html">humidity</a>. This site provides the source data
+                                and visualizations created as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.
+                            </p>
+
+                        </section>
+
+                    </section>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="box box-right">
+                    <h2>Visualizations</h2>
+                    <hr>
+
+
+                    <div class="row text-center">
+                        <div class="col-xs-6 col-sm-3 col-md-6">
+                            <figure>
+                                <p>Temperature (F) vs. Latitude</p>
+                                <a href="temps.html">
+                                    <img id="landing-viz" src="assets/images/LatTemp.png" alt="Latitude vs. Temperature">
+                                </a>
+                            </figure>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-6">
+                            <figure>
+                                <p>Humidity (%) vs. Latitude</p>
+                                <a href="humidity.html">
+                                    <img id="landing-viz" src="assets/images/LatHumidity.png" alt="Latitude vs. Humidity">
+                                </a>
+                            </figure>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-6">
+                            <figure>
+                                <p>Cloudiness (%) vs. Latitude</p>
+                                <a href="cloudiness.html">
+                                    <img id="landing-viz" src="assets/images/LatCloudiness.png" alt="Latitude vs. Cloudiness">
+                                </a>
+                            </figure>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-6">
+                            <figure>
+                                <p>Wind Speed (mph) vs. Latitude</p>
+                                <a href="wind.html">
+                                    <img id="landing-viz" src="assets/images/LatWind.png" alt="Latitude vs. Wind Speed">
+                                </a>
+                            </figure>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 
-        <table border="1">
-                <tr>
-                    <th colspan="3">
-                        Kate's Favorites
-                        </th>
-                </tr>
-                <tr>
-                    <th>Movies</th>
-                    <th>Songs</th>
-                    <th>Books</th>
-                </tr>
-                
-                <tr>
-                    <td>The Sound of Music</td>
-                    <td>1812 Overture</td>
-                    <td>A Wrinkle in Time</td>
-                </tr>
-                
-                <tr>
-                    <td>Wonder Woman</td>
-                    <td>Twist and Shout</td>
-                    <td>Pride and Prejudice</td>
-                </tr>
-                
-                <tr>
-                    <td>Singin' in the Rain</td>
-                    <td>Bohemian Rhapsody</td>
-                    <td>Charlotte's Web</td>
-                </tr>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
-
-        
-                </table>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">
+        </script>
+</div>
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">Copyright Kate Mikkelson - 2019</span>
+    </div>
+</footer>
+</div>
 </body>
-</html
+
+</html>
